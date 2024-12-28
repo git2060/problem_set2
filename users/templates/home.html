@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block title %}
+home
+{% endblock %}
+{% for app in data %}
+{{app.app_icon}}
+<div class="container m-2 border border-secondary" style="background-color:#dee6ec">
+    <img class="m-3" style="width: 100px; height: 100px;" src="{{app.app_icon.url}}" alt="not found">
+    <div class="d-inline-block">
+        <h2 class="d-inline m-5">{{app.app_name}}</h2> <br>
+        <a class="m-5" href="{% url 'app' id=app.id %}">View in Detail ></a>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    </div class="float-right">
+    <button class="float-right btn btn-success m-5 float-right" type="submit">{{app.points}} &nbsp;
+        POINTS</button>
+</div>
+{% endfor %}
+{% endblock %}

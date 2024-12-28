@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block title %}
+points
+{% endblock %}
+<div class="row">
+    <div class="col">
+        <h3>Apps</h3>
+        <br>
+        {% for i in app_names %}
+        <h4>{{i}}</h4>
+        {% endfor %}
+    </div>
+    <div class="col">
+        <h3>Points</h3>
+        <br>
+        {% for i in app_points %}
+        <h4>{{i}}</h4>
+        {% endfor %}
+    </div>
+    <div class="col">
+        <h3>Total Points</h3>
+    </div>
+    <div class="col">
+        <h3>{{total_points}}</h3>
+    </div>
+</div>
+{% endblock%}

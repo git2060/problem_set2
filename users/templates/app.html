@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block title %}
+app
+{% endblock %}
+<div class="container m-2 border border-secondary" style="background-color:#dee6ec">
+    <img class="m-3" style="width: 100px; height: 100px;" src="{{data.app_icon.url}}" alt="not found">
+
+    <div class="d-inline-block">
+
+        <h2 class="d-inline m-5">{{data.app_name}}</h2> <br>
+        <a class="m-5" href="">View in Detail ></a>
+
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    </div class="float-right">
+    <button class="float-right btn btn-success m-5 float-right" type="submit">{{data.points}} &nbsp;
+        POINTS</button>
+</div>
+<form action="" method="post">
+    {% csrf_token %}
+
+    <div class="file-droppable">
+        <div>Drag-n-drop some file here</div>
+        <span>&times;</span>
+        <input name="img" type="file" name="upload" />
+    </div>
+    <input type="text" name="data_name" style="display: none" value="{{data.data_name}}">
+    <input type="number" name="points" style="display: none" value="{{data.points}}">
+    <input class="btn btn-success m-3" type="submit" value="SUBMIT">
+</form>
+
+{% endblock %}
+
